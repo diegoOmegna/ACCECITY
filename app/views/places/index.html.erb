@@ -3,9 +3,9 @@
 <div class="container">
 <ul>
   <% @places.each do |place| %>
-    <li><%= place.name %></li>
-    <li><%= place.details %></li>
-    <li><%= place.address %></li>
+    <li> Name: <%= place.name %></li>
+    <li>Details: <%= place.details %> </li>
+    <li>Address: <%= place.address %> </li>
   <% end %>
 </ul>
 </div>
@@ -15,3 +15,4 @@
 
 <%= link_to "Add new place", new_place_path, class:"btn btn-primary" %>
 <%= link_to "go back", root_path, class:"btn btn-primary"%>
+
