@@ -12,9 +12,15 @@
 <div class="container">
 <ul>
   <% @places.each do |place| %>
-    <li> Name: <%= place.name %></li>
+    <li>Name: <%= place.name %></li>
     <li>Details: <%= place.details %> </li>
     <li>Address: <%= place.address %> </li>
+
+    <%= link_to "edit", edit_place_path(place), class:"btn btn-primary"%>
+    <%= link_to "delete", place_path(place), class:"btn btn-primary", data:{turbo_method:"delete", turbo_confirm:"Are u bloody sure?"}%>
+    <%= link_to "show", place_path(place), class:"btn btn-primary"%>
+
+
   <% end %>
 </ul>
 </div>
