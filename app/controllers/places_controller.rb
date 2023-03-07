@@ -1,14 +1,11 @@
 class PlacesController < ApplicationController
+  before_action :set_place [:show, :edit, :update]
+
   def index
-    @places = Place.all()
+    @places = Place.all
   end
 
   def show
-    @places = Place.find(params[:id])
-  end
-
-  def edit
-    @places = Place.find(params[:id])
   end
 
   def new
@@ -16,15 +13,33 @@ class PlacesController < ApplicationController
   end
 
   def create
-   place = Place.create(place_params)
+    @place = Place.new(place_params)
+    if @place.save
+      redirect_to places_path
+    else
+      render :new
+    end
+  end
 
-   redirect_to_places_path
+  def edit
+  end
+
+  def update
+    if @place.update(place_params)
+      redirect_to places_path
+    else
+      render :edit
+    end
   end
 
   private
 
   def place_params
     params.require(:place).permit(:name, :address)
+  end
+
+  def set_place
+    @place = Place.find(params[:id])
   end
 
 end
