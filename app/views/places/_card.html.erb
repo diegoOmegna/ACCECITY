@@ -1,0 +1,16 @@
+
+<div class="card-product">
+  <img src="https://picsum.photos/300/300?id=<%=place.id%>" />
+  <div class="card-product-infos" >
+    <h2><%= place.name%></h2>
+    <p><%= place.details %> <br/> <br/> <strong><%= place.address %></strong>
+      <br/> <br/>
+      <div class="d-flex gap-1">
+      <%= link_to "edit", edit_place_path(place), class:"btn btn-primary"%>
+      <%= link_to "delete", place_path(place), class:"btn btn-primary", data:{turbo_method:"delete", turbo_confirm:"Are u bloody sure?"}%>
+      <%= link_to "show", place_path(place), class:"btn btn-primary"%>
+      </div>
+    </p>
+
+  </div>
+</div>
