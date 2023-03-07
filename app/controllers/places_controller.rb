@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_place, only: [:show, :edit, :update]
+  before_action :set_place, only: [:show, :edit, :update, :destroy]
 
   def index
     @places = Place.all
@@ -34,10 +34,18 @@ class PlacesController < ApplicationController
     end
   end
 
+  def destroy
+    if @place.destroy
+      redirect_to places_path
+    else
+      render :index
+    end
+  end
+
   private
 
   def place_params
-    params.require(:place).permit(:name, :address, :details,)
+    params.require(:place).permit(:name, :address, :details)
   end
 
   def set_place
