@@ -3,7 +3,11 @@ class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update]
 
   def index
-    @places = Place.all
+    if params[:query].present?
+      @places = Place.search_by_name_and_details(params[:query])
+    else
+      @places = Place.all
+    end
   end
 
   def show
