@@ -8,9 +8,23 @@ class ReviewsController < ApplicationController
   end
 
   def show
+    if @review.user_id == current_user.id
+      render :show
+    else
+      redirect_to place_path(@place)
+    end
   end
 
   def edit
+    if @review.user_id == current_user.id
+      render :edit
+    else
+      redirect_to place_path(@place)
+    end
+  end
+
+  def new
+    @review = Review.new
   end
 
   def create
@@ -18,8 +32,8 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id
     @review.place_id = @place.id
 
-    if review.save
-      redirect_to @review
+    if @review.save
+      redirect_to place_review_path(@place, @review)
     else
       render :new
     end
