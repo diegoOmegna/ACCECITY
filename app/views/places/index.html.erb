@@ -1,5 +1,14 @@
 <h1> index </h1>
 
+<%= form_with url: places_path, method: :get, class: "d-flex my-3" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a Place"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
 <div class="container">
 <ul>
   <% @places.each do |place| %>
@@ -15,4 +24,3 @@
 
 <%= link_to "Add new place", new_place_path, class:"btn btn-primary" %>
 <%= link_to "go back", root_path, class:"btn btn-primary"%>
-
