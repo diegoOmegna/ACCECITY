@@ -1,5 +1,6 @@
 class PlacesController < ApplicationController
-  before_action :set_place [:show, :edit, :update]
+  before_action :set_place, only: [:show, :edit, :update]
+
 
   def index
     @places = Place.all
@@ -9,7 +10,7 @@ class PlacesController < ApplicationController
   end
 
   def new
-    @places = Place.new
+    @place = Place.new
   end
 
   def create
@@ -17,7 +18,7 @@ class PlacesController < ApplicationController
     if @place.save
       redirect_to places_path
     else
-      render :new
+      render :new, status: :unprocessable_entity #it didn t work properly to create a new place
     end
   end
 
@@ -35,7 +36,7 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :address)
+    params.require(:place).permit(:name, :address, :details, :user_id)
   end
 
   def set_place
