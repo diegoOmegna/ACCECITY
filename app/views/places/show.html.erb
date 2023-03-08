@@ -1,11 +1,22 @@
 
 <div class="container">
   <h2> <%= @place.name %> <h2>
-  <p>  <%= @place.details %> </p>
   <p>  <%= @place.address %> </p>
   <img src="https://picsum.photos/300/300" />
-</div>
 
-<% @place.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+    <% @place.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+
+
+    <h2><strong>Reviews</strong></h2>
+
+
+    <ul class="list-group">
+      <% @place.reviews.each do |review| %>
+        <li class="list-group-item"><%= review.rating %></li>
+        <li class="list-group-item"><%= review.comment %></li>
+    <% end %>
+    <h2><strong>About Place</strong></h2>
+    <p>  <%= @place.details %> </p>
+    </div>
