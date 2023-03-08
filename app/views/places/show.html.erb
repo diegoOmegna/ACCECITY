@@ -3,9 +3,13 @@
   <h2> <%= @place.name %> <h2>
   <p>  <%= @place.details %> </p>
   <p>  <%= @place.address %> </p>
-  <img src="https://picsum.photos/300/300" />
+  <%# <img src="https://picsum.photos/300/300" /> %>
 </div>
 
 <% @place.photos.each do |photo| %>
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
+
+<div style="width: 400px; height: 600px;" data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
