@@ -7,5 +7,6 @@
   <%= f.text_field :details %>
   <%= f.label :address %>
   <%= f.text_field :address %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit %>
 <% end %>
