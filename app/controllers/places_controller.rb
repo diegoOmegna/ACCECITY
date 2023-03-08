@@ -23,7 +23,7 @@ class PlacesController < ApplicationController
     if @place.save
       redirect_to places_path
     else
-      render :new, status: :unprocessable_entity #it didn t work properly to create a new place
+      render :new, status: :unprocessable_entity # it didn t work properly to create a new place
     end
   end
 
