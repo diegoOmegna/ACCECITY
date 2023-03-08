@@ -5,3 +5,7 @@
   <p>  <%= @place.address %> </p>
   <img src="https://picsum.photos/300/300" />
 </div>
+
+<% @article.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
