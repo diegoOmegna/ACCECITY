@@ -1,2 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <h1>Where do you</h1>
+  <h1>want to go today?</h1>
+</div>
+
+<%= render "shared/banner" %>
+  <div class="container">
+    <div class="center" >
+      <%= link_to "+Add New Place", new_place_path, class: "btn btn-primary" %>
+    </div>
+  </div>

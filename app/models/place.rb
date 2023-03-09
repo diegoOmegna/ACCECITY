@@ -2,6 +2,8 @@ class Place < ApplicationRecord
   belongs_to :user
   has_many_attached :photos
   has_many :reviews
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   include PgSearch::Model
 
@@ -10,4 +12,6 @@ class Place < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+  scope :top, -> { joins(:reviews).order(rating: :desc) }
+
 end

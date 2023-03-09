@@ -8,9 +8,27 @@ class PlacesController < ApplicationController
     else
       @places = Place.all
     end
+
+    # @markers = @places.geocoded.map do |place|
+    #   {
+    #     lat: place.latitude,
+    #     lng: place.longitude,
+    #     info_window_html: render_to_string(partial: "info_window", locals: { place: place})
+    #     marker_html: render_to_string(partial: "marker", locals: { place: place})
+    #   }
+    # end
   end
 
   def show
+    @places = Place.all
+    @markers = @places.geocoded.map do |place|
+      {
+        lat: place.latitude,
+        lng: place.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { place: place}),
+        marker_html: render_to_string(partial: "marker", locals: { place: place})
+      }
+    end
   end
 
   def new
@@ -49,7 +67,7 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :address, :details, photos: [])
+    params.require(:place).permit(:name, :details, :address, photos: [])
   end
 
   def set_place
