@@ -7,13 +7,7 @@ class ReviewsController < ApplicationController
     @reviews = Review.all
   end
 
-  def show
-    if @review.user_id == current_user.id
-      render :show
-    else
-      redirect_to place_path(@place)
-    end
-  end
+
 
   def edit
     if @review.user_id == current_user.id
@@ -33,7 +27,7 @@ class ReviewsController < ApplicationController
     @review.place_id = @place.id
 
     if @review.save
-      redirect_to place_review_path(@place, @review)
+      redirect_to @place
     else
       render :new
     end
