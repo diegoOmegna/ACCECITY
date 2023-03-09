@@ -1,11 +1,16 @@
 <h1> places new </h1>
 
-<%= form_with model: @places do |f| %>
+<% @place.errors.each do |error|%>
+  <%= error.full_message %>
+<% end %>
+
+<%= simple_form_for @place do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :details %>
   <%= f.text_field :details %>
   <%= f.label :address %>
-  <%= f.number_field :address %>
+  <%= f.text_field :address %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit %>
 <% end %>
