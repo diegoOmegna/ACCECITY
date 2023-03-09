@@ -1,8 +1,8 @@
-<div class="container"></div>
+<div class="container">
   <h1>New review</h1>
   <%= simple_form_for([@place, @review]) do |f| %>
     <%= f.input :rating %>
     <%= f.input :comment %>
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-primary" %>
   <% end %>
 </div>
