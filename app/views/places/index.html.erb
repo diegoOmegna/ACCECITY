@@ -8,20 +8,7 @@
   %>
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
-
-<div class="container">
-  <ul>
-  <div class="cards">
-    <%# <%= render partial:"shared/card" %>
-
-  <% @places.each do |place| %>
-    <%= render partial:"places/card", locals:{place: place} %>
-    <% end %>
-    </ul>
-  </div>
-
-
-</div>
+<%= render "shared/cardsmall" %>
 
 <%# <%= cl_image_tag("https://res.cloudinary.com/dtl8ilb2t/image/upload/v1678098172/cld-sample-2.jpg",
       width: 400, height: 300, crop: :fill) %>
