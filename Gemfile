@@ -80,3 +80,5 @@ end
 
 gem "cloudinary"
 gem "geocoder"
+
+gem "faker"

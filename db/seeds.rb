@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+USERS_TO_CREATE = 10
+PLACES_TO_CREATE = 10
+REVIEWS_TO_CREATE = 5
+
+Dir[Rails.root.join("db", "seeds", "*.rb")].sort.each do |file|
+  require file
+end
