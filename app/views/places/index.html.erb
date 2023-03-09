@@ -1,18 +1,17 @@
-<h1> index </h1>
+<div class="container">
+  <h1> index </h1>
+      <%= form_with url: places_path, method: :get, class: "d-flex my-3" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a Place"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    <%= render "shared/cardsmall" %>
 
-<%= form_with url: places_path, method: :get, class: "d-flex my-3" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a Place"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-<%= render "shared/cardsmall" %>
-
-<%# <%= cl_image_tag("https://res.cloudinary.com/dtl8ilb2t/image/upload/v1678098172/cld-sample-2.jpg",
-      width: 400, height: 300, crop: :fill) %>
-
-
-<%= link_to "Add new place", new_place_path, class:"btn btn-primary" %>
-<%= link_to "go back", root_path, class:"btn btn-primary"%>
+  <%# <%= cl_image_tag("https://res.cloudinary.com/dtl8ilb2t/image/upload/v1678098172/cld-sample-2.jpg",
+        width: 400, height: 300, crop: :fill) %>
+    <%= link_to "Add new place", new_place_path, class:"btn btn-primary" %>
+    <%= link_to "go back", root_path, class:"btn btn-primary"%>
+</div>
