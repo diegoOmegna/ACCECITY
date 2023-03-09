@@ -12,4 +12,6 @@ class Place < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+  scope :top, -> { joins(:reviews).order(rating: :desc) }
+
 end
