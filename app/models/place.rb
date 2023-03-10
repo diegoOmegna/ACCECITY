@@ -14,4 +14,12 @@ class Place < ApplicationRecord
     }
   scope :top, -> { joins(:reviews).order(rating: :desc) }
 
+  def photos_attached
+    if photo.attached?
+      photo.key
+    else
+      "images/Zurich_banner.webp"
+    end
+  end
+
 end
