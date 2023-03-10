@@ -20,6 +20,7 @@ class PlacesController < ApplicationController
   end
 
   def show
+    @reviews = Review.where(place_id: @place.id).order("created_at DESC")
     @places = Place.all
     @markers = @places.geocoded.map do |place|
       {

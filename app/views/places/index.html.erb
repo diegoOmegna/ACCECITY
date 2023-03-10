@@ -1,27 +1,25 @@
+<% if !user_signed_in? %>
+  <div class="jumbotron">
+    <h1>Your Favorite Places Reviewed</h1>
+    <p>Please click Sign up button to review a place</p>
+    <p><%= link_to "Sign Up To Write A Review", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+  </div>
+<% end %>
+
 <div class="container">
   <h1> index </h1>
-    <%= form_with url: places_path, method: :get, class: "d-flex my-3" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a Place"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
-  <div class="container">
-  <ul>
-  <div class="cards">
-    <%# <%= render partial:"shared/card" %>
-  <% @places.each do |place| %>
-    <%= render partial:"places/card", locals:{place: place} %>
-    <% end %>
-    </ul>
-  </div>
-  </div>
+      <%= form_with url: places_path, method: :get, class: "d-flex my-3" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a Place"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    <%= render "shared/cardsmall" %>
+
   <%# <%= cl_image_tag("https://res.cloudinary.com/dtl8ilb2t/image/upload/v1678098172/cld-sample-2.jpg",
         width: 400, height: 300, crop: :fill) %>
-
-
-  <%= link_to "Add new place", new_place_path, class:"btn btn-primary" %>
-  <%= link_to "go back", root_path, class:"btn btn-primary"%>
+    <%= link_to "Add new place", new_place_path, class:"btn btn-primary" %>
+    <%= link_to "go back", root_path, class:"btn btn-primary"%>
 </div>
