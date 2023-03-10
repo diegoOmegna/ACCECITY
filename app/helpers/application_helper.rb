@@ -7,9 +7,9 @@ module ApplicationHelper
     end
   end
 
-  def profile_picture_url(user)
-    if user.photo.attached?
-      cl_image_url user.photo.key
+  def profile_picture_url
+    if current_user.photo.attached?
+      cloudinary_url current_user.photo.key
     else
       image_url "avatar-unknown.png"
     end

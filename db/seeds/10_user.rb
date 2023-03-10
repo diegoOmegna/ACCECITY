@@ -8,7 +8,7 @@ USERS_TO_CREATE.times do |i|
     first_name: Faker::FunnyName.name,
     last_name: Faker::FunnyName.name
   )
-  file_url = PROFILE_PHOTOS[i]
+  file_url = PROFILE_PHOTOS[i] || PROFILE_PHOTOS[i % PROFILE_PHOTOS.length]
   if file_url
     begin
       file = URI.open(file_url)
