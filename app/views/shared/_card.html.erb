@@ -3,5 +3,7 @@
     <div class="card-product-infos" >
       <h2><%= @place.name%></h2>
       <p><strong><%= @place.address %></strong></p>
+      <p><%= "#{@reviews.length} people have reviewed"%></p>
+      <p>Average Rating <%= @avg_review %></p>
     </div>
    </div>
