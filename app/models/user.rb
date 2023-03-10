@@ -6,12 +6,4 @@ class User < ApplicationRecord
   has_many :places
   has_many :reviews, dependent: :destroy
   has_one_attached :photo, dependent: :destroy
-
-  def profile_picture
-    if photo.attached?
-      photo.key
-    else
-      "avatar-unknown.png"
-    end
-  end
 end

@@ -8,9 +8,9 @@ Place.all.each do |place|
       place_id: place.id,
       user_id: place.user_id,
     )
-puts review.user.first_name
-puts review.comment
-puts review.place
-puts review.rating
+    puts review.user.first_name
+    puts review.comment
+    puts review.place
+    puts review.rating
   end
 end
