@@ -1,6 +1,7 @@
 class Place < ApplicationRecord
   belongs_to :user
   has_many_attached :photos
+  has_one_attached :header_photo
   has_many :reviews
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
@@ -13,13 +14,4 @@ class Place < ApplicationRecord
       tsearch: { prefix: true }
     }
   scope :top, -> { joins(:reviews).order(rating: :desc) }
-
-  def photos_attached
-    if photo.attached?
-      photo.key
-    else
-      "images/Zurich_banner.webp"
-    end
-  end
-
 end
