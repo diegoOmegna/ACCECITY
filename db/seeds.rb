@@ -22,7 +22,8 @@ PLACE_HEADER_PHOTOS = %w[
 ]
 REVIEWS_TO_CREATE = 5
 PROFILE_PHOTOS = %w[
-  https://wallpaperaccess.com/full/2213426.jpg  https://images.hola.com/us/images/027b-168119b04f1e-4ad72c0ac2e1-1000/horizontal-1200/zac-efron.jpg
+  https://wallpaperaccess.com/full/2213426.jpg
+  https://images.hola.com/us/images/027b-168119b04f1e-4ad72c0ac2e1-1000/horizontal-1200/zac-efron.jpg
   https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Dwayne_Johnson_2014_%28cropped%29.jpg/640px-Dwayne_Johnson_2014_%28cropped%29.jpg
 ]
 
