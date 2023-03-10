@@ -1,43 +1,29 @@
 
-<div class="container">
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    <div class="card-product-infos" >
-    <h2><%= @place.name%></h2>
-    <p><strong><%= @place.address %></strong></p>
-    </div>
-   </div>
+  <%= render "/shared/card" %>
 
-  <h2> <%= @place.name %> <h2>
-  <p>  <%= @place.address %> </p>
-</div>
+  <% @place.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
 
-<% @place.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-
-<div style="width: 400px; height: 600px;" data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
-  <img src="https://picsum.photos/300/300" />
-
-    <% @place.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-
-
-    <h2><strong>Reviews</strong></h2>
-
-        <%= link_to "Write Review", new_place_review_path(@place), class: "btn btn-primary" %>
-
-        <ul class="list-group">
-        <% @place.reviews.each do |review| %>
-          <li class="list-group-item"><%= review.rating %></li>
-          <li class="list-group-item"><%= review.comment %></li>
-        <% end %>
+      <ul class="list-group">
+      <% @place.reviews.each do |review| %>
+        <li class="list-group-item"><%= review.rating %></li>
+        <li class="list-group-item"><%= review.comment %></li>
+      <% end %>
 
     <h2><strong>About Place</strong></h2>
     <p>  <%= @place.details %> </p>
-    </div>
 
+    <h2><strong>Reviews</strong></h2>
+
+    <%= link_to "Write Review", new_place_review_path(@place), class: "btn btn-primary" %>
+
+    <%= render "shared/img_upload" %>
+
+
+
+  <div style="width: 400px; height: 600px;" data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
