@@ -1,9 +1,9 @@
  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-      url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    <div class="card-product-infos" >
-      <h2><%= @place.name%></h2>
-      <p><strong><%= @place.address %></strong></p>
-      <p><%= "#{@reviews.length} people have reviewed"%></p>
-      <p>Average Rating <%= @avg_review %></p>
+    url(https://www.zuerich.com/sites/default/files/image/2022/web_zurich_landesmuseum_ZT_22616_1280x960.jpg)">
+    <div class="card-info" >
+      <div><h2><%= @place.name%></h2></div>
+      <div><i class="fa-solid fa-location-dot"></i> <%= @place.address %></div>
+      <div><%= "#{@reviews.length} people have reviewed"%></div>
+      <div>rating <%= @avg_review %></div>
     </div>
-   </div>
+ </div>
