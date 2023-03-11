@@ -1,7 +1,7 @@
 <div class="container">
   <h1>New review</h1>
   <%= simple_form_for([@place, @review]) do |f| %>
-    <%= f.input :rating %>
+    <%= f.input :rating, input_html: { min: '0', max: '5', step: '1' }%>
     <%= f.input :comment %>
     <%= f.button :submit, class: "btn btn-primary" %>
   <% end %>
