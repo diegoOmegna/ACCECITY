@@ -7,8 +7,7 @@
 <% end %>
 
 <div class="container">
-  <h1> index </h1>
-      <%= form_with url: places_path, method: :get, class: "d-flex my-3" do %>
+        <%= form_with url: places_path, method: :get, class: "d-flex my-3" do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
@@ -16,6 +15,7 @@
         %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
+      <h1> Places </h1>
     <%= render "shared/cardsmall" %>
 
   <%# <%= cl_image_tag("https://res.cloudinary.com/dtl8ilb2t/image/upload/v1678098172/cld-sample-2.jpg",
