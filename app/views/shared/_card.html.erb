@@ -4,7 +4,7 @@
       <div><h2><%= @place.name%></h2></div>
       <div><i class="fa-solid fa-location-dot"></i> <%= @place.address %></div>
       <div><%= "#{@reviews.length} people have reviewed"%></div>
-      <li class="list-group-item"> <% @avg_review.to_i.times do  %>
+      <li class="list-group-item"> <% @avg_review.to_i.times do %>
       <i class="fa-solid fa-star"></i>
       <% end %>
     </div>

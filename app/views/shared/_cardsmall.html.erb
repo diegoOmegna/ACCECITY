@@ -5,6 +5,11 @@
      <div class="d-flex flex-column">
         <div class="p-2"> <%= link_to place.name, place_path(place.id)%></div>
         <div class="p-2"><i class="fa-solid fa-location-dot"></i> <%= place.address %></div>
+        <div><%= "#{place.reviews.count} people have reviewed"%></div>
+        <div><%= place.avg_review.to_i.times do %>
+        <i class="fa-solid fa-star"></i>
+        <% end %>
+        </div>
       </div>
     </div>
   <% end %>

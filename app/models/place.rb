@@ -14,4 +14,10 @@ class Place < ApplicationRecord
       tsearch: { prefix: true }
     }
   scope :top, -> { joins(:reviews).order(rating: :desc) }
+
+
+  def avg_review
+    return "no reviews" if reviews.empty?
+    reviews.average(:rating).round(2)
+  end
 end
