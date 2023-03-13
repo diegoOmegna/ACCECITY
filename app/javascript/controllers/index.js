@@ -4,8 +4,6 @@
 
 import { application } from "./application"
 
-import FlickityController from "./flickity_controller"
-application.register("flickity", FlickityController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)

@@ -8,15 +8,14 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :details %>
-  <%= f.text_field :details %>
+  <%= f.text_area :details, maxlength: 300%>
   <%= f.label :zip_code %>
   <%= f.text_field :zip_code %>
   <%= f.label :address %>
   <%= f.input :address,as: :hidden,
   input_html: {data: {address_autocomplete_target: "address"}},
-  wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
-  %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
+  <%= f.input :header_photo, as: :file, input_html: { multiple: false } %>
   <%= f.submit %>
 <% end %>
 
