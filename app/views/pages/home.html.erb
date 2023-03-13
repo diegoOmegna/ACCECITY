@@ -1,6 +1,10 @@
 <div class="home-headers">
   <div class="salute-header">
-    <%# Hello <%= current_user.first_name %>
+    <% if user_signed_in? %>
+      GoodDay <%= current_user.first_name %>!
+    <% else %>
+      Good Morning!
+    <% end %>
   </div>
   <div class="main-header">
     <h1>Where do you want to go today?</h1>
