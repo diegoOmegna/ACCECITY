@@ -2,8 +2,12 @@
 <div class="container">
   <%= link_to "home page", root_path, class:"btn btn-primary"%>
 
+      <% if user_signed_in? %>
+        <h1> Hello, Mr/Miss</h1> <h2> <%= current_user.first_name %> </h2>
+      <% else %>
+        Good Morning!
+      <% end %>
 
-    <h1> Hello, Mr/Miss</h1>
 
     <h3>personal info </h3>
 
