@@ -1,8 +1,28 @@
+
+.btn-form {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border: #086CFC;
+  border-left: none;
+  background-clip: padding-box;
+  border: 1px solid #086CFC;
+  display: flex;
+  background-color: #086CFC;
+  justify-content: center;
+  color: white;
+  padding: 3%;
+}
 .form-control {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
   position: relative;
 }
 
 .form-control .btn {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
   position: absolute;
   top: 8px;
   bottom: 8px;
