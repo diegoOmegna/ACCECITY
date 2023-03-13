@@ -1,24 +1,30 @@
 
-<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="true">
   <div class="carousel-inner">
-    <% @places.each do |place| %>
-      <div class="carousel-item active" data-bs-interval="10000">
-        <div class="home-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-            url(https://www.zuerich.com/sites/default/files/image/2022/web_zurich_landesmuseum_ZT_22616_1280x960.jpg)">
-          <div class="d-flex flex-column">
-            <div class="p-2"> <%= place.name %></div>
-            <div class="p-2"><i class="fa-solid fa-location-dot"></i> <%= place.address %></div>
-            <div class="p-2">Rating <%= @avg_review %></div>
+    <% @places.each_with_index do |place, index| %>
+      <div class="carousel-item <%= 'active' if index == 0 %>">
+        <%= link_to place_path(place) do %>
+         <div class="home-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url(https://www.zuerich.com/sites/default/files/image/2022/web_zurich_landesmuseum_ZT_22616_1280x960.jpg)">
+            <div class="card-info" >
+              <div><h2><%= place.name%></h2></div>
+              <div><i class="fa-solid fa-location-dot"></i> <%= place.address %></div>
+              <div><%= "#{@reviews.length} people have reviewed"%></div>
+              <li class="list-group-item"> <% @avg_review.to_i.times do  %>
+              <i class="fa-solid fa-star"></i>
+              <% end %>
+            </div>
           </div>
-        </div>
-      </div> <%# <%= cl_image_tag place.header_photo.key %>
+        <% end %>
+      </div>
     <% end %>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
