@@ -34,8 +34,14 @@
     <h2><strong>Gallery Photo</strong></h2>
     <%= render "shared/img_upload" %>
 
-    <div style="width: 400px; height: 600px;" data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-</div>
+
+
+
+  <div style="width: 400px; height: 600px;" data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  </div>
+
+<%= render "shared/footer" %>
+

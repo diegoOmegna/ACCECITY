@@ -1,11 +1,20 @@
-<div class="container">
-  <h1>Where do you</h1>
-  <h1>want to go today?</h1>
+<div class="home-headers">
+  <div class="salute-header">
+    Hello <%= current_user.first_name %>!
+  </div>
+  <div class="main-header">
+    <h1>Where do you want to go today?</h1>
+  </div>
+
 </div>
 
 <%= render "shared/banner" %>
+
   <div class="container">
-    <div class="center" >
+    <div class="button-center" >
       <%= link_to "+Add New Place", new_place_path, class: "btn btn-primary" %>
     </div>
   </div>
+
+<%# <%= render "shared/home_card" %> %>
+<%= render "shared/footer"  %>

@@ -1,7 +1,34 @@
-// Specific CSS for your home-page
-.center {
+.button-center {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 150px;
+}
+
+.home-header {
+  flex-direction: column;
+}
+
+.salute-header {
+  margin-top: 5%;
+  margin-bottom: 10%;
+  margin-left: 5%;
+
+}
+.main-header {
+  width: 90%;
+  margin-bottom: 10%;
+  margin-top: 10%;
+  margin-left: 5%;
+
+}
+.main-header h1 {
+  font-family: 'Urbanist';
+  font-weight: 800;
+  font-size: 250%;
+  line-height: 100%;
+
+  letter-spacing: 0.01em;
+
+  color: #1B1B1B;
 }

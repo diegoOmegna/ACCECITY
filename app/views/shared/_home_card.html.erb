@@ -1,0 +1,16 @@
+
+<div  data-controller="flickity">
+    <% @places.each do |place| %>
+      <div class="carousel-cell" data-link="<%= place_path(place) %>">
+        <div class="home-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+              url(https://www.zuerich.com/sites/default/files/image/2022/web_zurich_landesmuseum_ZT_22616_1280x960.jpg)">
+            <div class="d-flex flex-column">
+              <div class="p-2"> <%= place.name %></div>
+              <div class="p-2"><i class="fa-solid fa-location-dot"></i> <%= place.address %></div>
+              <div class="p-2">Rating <%= @avg_review %></div>
+            </div>
+        </div>
+          <%# <%= cl_image_tag place.header_photo.key %>
+      </div>
+    <% end %>
+</div>
