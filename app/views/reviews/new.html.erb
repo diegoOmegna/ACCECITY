@@ -2,6 +2,9 @@
   <h1>New review</h1>
   <%= simple_form_for([@place, @review]) do |f| %>
     <%= f.input :rating, input_html: { min: '0', max: '3', step: '1' }%>
+    <%= f.input :restroom_rating, input_html: { min: '0', max: '3', step: '1' }%>
+    <%= f.input :parking_rating, input_html: { min: '0', max: '3', step: '1' }%>
+    <%= f.input :other_rating, input_html: { min: '0', max: '3', step: '1' }%>
     <%= f.input :comment, minlength: 50, maxlength: 600 %>
     <%= f.button :submit, class: "btn btn-primary" %>
   <% end %>
