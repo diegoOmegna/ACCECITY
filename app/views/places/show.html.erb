@@ -19,7 +19,7 @@
           <% else %>
               <div>
               <% @place.reviews.each do |review| %>
-                <p>username <%= review.user_last_name %></p>
+                <p><%= review.user_first_name %></p>
                 <p > <% review.rating.to_i.times do  %>
                   <i class="fa-solid fa-star"></i>
                   <% end %></p>

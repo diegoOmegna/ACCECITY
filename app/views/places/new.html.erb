@@ -1,18 +1,21 @@
-<h1> places new </h1>
+<div class="container">
+  <h1> places new </h1>
 
-<% @place.errors.each do |error|%>
-  <%= error.full_message %>
-<% end %>
+  <% @place.errors.each do |error|%>
+    <%= error.full_message %>
+  <% end %>
 
-<%= simple_form_for @place do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :details %>
-  <%= f.text_area :details, maxlength: 300 %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.input :header_photo, as: :file, input_html: { multiple: false } %>
-  <%= f.submit %>
-<% end %>
+  <%= simple_form_for @place do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :details %>
+    <%= f.text_area :details, maxlength: 300, error: 'The text may not be longer than 300 Characters'%>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+    <%= f.input :header_photo, as: :file, input_html: { multiple: false } %>
+    <%= f.button :submit, "Add Place", class: "btn btn-primary" %>
 
-<%= render "shared/footer" %>
+  <% end %>
+
+  <%= render "shared/footer" %>
+</div>
