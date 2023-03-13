@@ -5,6 +5,14 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
+      <%= f.input :first_name,
+                  required: true,
+                  label: 'Your first name please',
+                  error: 'First name is mandatory, please specify one' %>
+      <%= f.input :last_name,
+                  required: true,
+                  label: 'Your last name please',
+                  error: 'Last name is mandatory, please specify one' %>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
@@ -19,7 +27,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
+      <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
     </div>
   <% end %>
 

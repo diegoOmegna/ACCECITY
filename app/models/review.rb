@@ -4,5 +4,5 @@ class Review < ApplicationRecord
 
   validates :rating, presence: true
   validates :comment, presence: true, length: { maximum: 400 }
-  delegate :last_name, to: :user, prefix: true
+  delegate :first_name, to: :user, prefix: true
 end
