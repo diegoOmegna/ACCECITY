@@ -1,6 +1,20 @@
-<h1>profile</h1>
+
+<div class="container">
+  <%= link_to "home page", root_path, class:"btn btn-primary"%>
 
 
-<%= link_to "home page", root_path, class:"btn btn-primary"%>
+    <h1> Hello, Mr/Miss</h1>
+
+    <h3>personal info </h3>
+
+    <h3>My reviews</h3>
+
+    <h3> My favorite places</h3>
+
+    <h3> Rating Guidelinness</h3>
 
 
+      <div class="btn btn-primary">
+    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+      </div>
+</div>
