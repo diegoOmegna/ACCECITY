@@ -1,11 +1,17 @@
 <div class="cards">
- <% @places.each do |place| %>
-   <div class="card-small" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-    url(https://www.zuerich.com/sites/default/files/image/2022/web_zurich_landesmuseum_ZT_22616_1280x960.jpg)">
-     <div class="d-flex flex-column">
-        <div class="p-2"> <%= link_to place.name, place_path(place.id)%></div>
-        <div class="p-2"><i class="fa-solid fa-location-dot"></i> <%= place.address %></div>
+  <% @places.each do |place| %>
+    <%= link_to place_path(place) do %>
+      <div class="card-small" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+          url(https://www.zuerich.com/sites/default/files/image/2022/web_zurich_landesmuseum_ZT_22616_1280x960.jpg)">
+          <div class="card-info" >
+            <div><h2><%= place.name%></h2></div>
+            <div><i class="fa-solid fa-location-dot"></i> <%= place.address %></div>
+            <div><%= "#{@reviews.length} people have reviewed"%></div>
+            <li class="list-group-item"> <% @avg_review.to_i.times do  %>
+            <i class="fa-solid fa-star"></i>
+            <% end %>
+          </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
