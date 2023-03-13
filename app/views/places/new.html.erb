@@ -17,7 +17,7 @@
   input_html: {data: {address_autocomplete_target: "address"}},
   wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
   <%= f.input :header_photo, as: :file, input_html: { multiple: false } %>
-  <%= f.submit, "Add Place", class: "btn btn-primary"  %>
+  <%= f.submit "Add Place", class: "btn btn-primary"  %>
 <% end %>
 
   <%= render "shared/footer" %>
