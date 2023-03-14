@@ -5,7 +5,7 @@
       <div class="carousel-item <%= 'active' if index == 0 %>">
         <%= link_to place_path(place) do %>
           <div class="home-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-            url(https://www.zuerich.com/sites/default/files/image/2022/web_zurich_landesmuseum_ZT_22616_1280x960.jpg)">
+            url('<%=place_header_photo_url(place)%>')">
             <div class="card-info" >
               <div><h2><%= place.name%></h2></div>
               <div><i class="fa-solid fa-location-dot"></i> <%= place.address %></div>

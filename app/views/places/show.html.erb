@@ -19,23 +19,23 @@
           <% else %>
               <div >
               <% @place.reviews.each do |review| %>
-              <div class ="shadow p-3 mb-3 bg-white rounded">
-                <p><%= review.user_first_name %></p>
-                <p><strong>Entrance Rating </strong><% review.rating.to_i.times do  %>
-                  <i class="fa-solid fa-star"></i>
-                  <% end %></p>
-                  <p >Restroom Rating <% review.restroom_rating.to_i.times do  %>
-                  <i class="fa-solid fa-star"></i>
-                  <% end %></p>
-                  <p >Parking Rating <% review.parking_rating.to_i.times do  %>
-                  <i class="fa-solid fa-star"></i>
-                  <% end %></p>
-                  <p >Other Rating <% review.other_rating.to_i.times do  %>
-                  <i class="fa-solid fa-star"></i>
-                  <% end %></p>
-                <p class="list-group-item"><%= review.comment %></p>
-                </div>
-               <% end %>
+                <div class ="shadow p-3 mb-3 bg-white rounded">
+                  <p><%= review.user_first_name %></p>
+                  <p><strong>Entrance Rating </strong><% review.rating.to_i.times do  %>
+                    <i class="fa-solid fa-star"></i>
+                    <% end %></p>
+                    <p >Restroom Rating <% review.restroom_rating.to_i.times do  %>
+                    <i class="fa-solid fa-star"></i>
+                    <% end %></p>
+                    <p >Parking Rating <% review.parking_rating.to_i.times do  %>
+                    <i class="fa-solid fa-star"></i>
+                    <% end %></p>
+                    <p >Other Rating <% review.other_rating.to_i.times do  %>
+                    <i class="fa-solid fa-star"></i>
+                    <% end %></p>
+                  <p class="list-group-item"><%= review.comment %></p>
+                  </div>
+                <% end %>
               </div>
             <% end %>
           </div>
@@ -43,15 +43,16 @@
     <div class = "d-flex justify-content-center m-3">
         <%= link_to "+Add Review", new_place_review_path(@place), class: "btn btn-primary" %>
     </div>
-    <h2><strong>Gallery Photo</strong></h2>
-    <%= render "shared/img_upload" %>
-
-
-
-  <div class="mapbox">
-    <div style="width: 400px; height: 600px;" data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div class="m-3">
+      <h2><strong>Gallery Photo</strong></h2>
+      <%= render "shared/img_upload" %>
+    </div>
+  <div class="justify-content-center m-3">
+    <div class="mapbox">
+      <div style="width: 95%; height: 600px;" data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
   </div>
 </div>
