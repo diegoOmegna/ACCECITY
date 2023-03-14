@@ -1,20 +1,58 @@
 
-<div class="container">
+<div class="container ">
   <%= link_to "home page", root_path, class:"btn btn-primary"%>
 
+    <div class="d-flex">
+      <h1> Hello, Mr/Miss <%= current_user.first_name %> </h1>
+    </div>
 
-    <h1> Hello, Mr/Miss</h1>
+      <div class="Personal-popup">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Personal info
+        </button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Personal Info</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
 
-    <h3>personal info </h3>
+                  <div class="d-flex">
+                    <p>First name:</p> <%= current_user.first_name %>
+                  </div>
+                  <div class="d-flex">
+                    <p>Last Name:</p> <%= current_user.last_name %>
+                  </div>
+                  <div class="d-flex">
+                    <p>e-mail:</p> <%= current_user.email %>
+                  </div>
 
-    <h3>My reviews</h3>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+    <h3>My reviews <span class="text-muted small"><%= current_user.reviews.count %> reviews</span></h3>
+    <div class="container">
+      <% current_user.reviews do |review| %>
+        <%= review.rating %>
+      <% end %>
+    </div>
 
     <h3> My favorite places</h3>
 
+
+
     <h3> Rating Guidelinness</h3>
 
-
       <div class="btn btn-primary">
-    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+        <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
       </div>
 </div>
