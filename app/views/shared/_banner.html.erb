@@ -1,17 +1,18 @@
-
-<div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%= image_tag('carousel1.jpeg', class: "d-block w-100") %>
+<div class="banner">
+  <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag('carousel1.jpeg', class: "d-block w-100") %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag('carousel2.jpeg', class: "d-block w-100")%>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag('carousel3.jpeg', class: "d-block w-100") %>
+      </div>
     </div>
-    <div class="carousel-item">
-      <%= image_tag('carousel2.jpeg', class: "d-block w-100")%>
+    <div class="container banner-search">
+      <%= render "shared/form" %>
     </div>
-    <div class="carousel-item">
-      <%= image_tag('carousel3.jpeg', class: "d-block w-100") %>
-    </div>
-  </div>
-  <div class="container banner-search">
-    <%= render "shared/form" %>
   </div>
 </div>

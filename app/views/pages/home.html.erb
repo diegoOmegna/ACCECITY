@@ -1,4 +1,4 @@
-<div class="container" >
+<div>
   <div class="home-headers">
     <div class="salute-header">
       <% if user_signed_in? %>
@@ -11,9 +11,14 @@
       <h1>Where do you want to go today?</h1>
     </div>
   </div>
-
   <%= render "shared/banner" %>
 
+  <div class="container">
+    <div class="invitation">
+      <h2>Join the community! </h2>
+      <h3>Help us make the city a place for everyone,<%=link_to "sign up", new_user_registration_path %> and be part of the accessibility revolution.</h3>
+    </div>
+  </div>
     <div class="container">
       <div class="button-center" >
         <%= link_to "+Add New Place", new_place_path, class: "btn btn-primary" %>
