@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'reviews/new'
+  get "about", to: "pages#about"
   get 'profile', to: 'pages#profile', as: :profile
   devise_for :users
   root to: "pages#home"
