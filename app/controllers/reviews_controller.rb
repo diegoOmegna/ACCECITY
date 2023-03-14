@@ -7,8 +7,6 @@ class ReviewsController < ApplicationController
     @reviews = Review.all
   end
 
-
-
   def edit
     if @review.user_id == current_user.id
       render :edit
