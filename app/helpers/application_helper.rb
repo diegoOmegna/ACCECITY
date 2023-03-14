@@ -14,4 +14,26 @@ module ApplicationHelper
       image_url "avatar-unknown.png"
     end
   end
+
+  def greeting_user
+    time = Time.now
+    if time.hour >= 5 && time.hour < 12
+      "Good morning, #{current_user.first_name}!"
+    elsif time.hour >= 12 && time.hour < 18
+      "Good afternoon, #{current_user.first_name}!"
+    else
+      "Good Evening, #{current_user.first_name}!"
+    end
+  end
+
+  def greeting_everyone
+    time = Time.now
+    if time.hour >= 5 && time.hour < 12
+      "Good morning!"
+    elsif time.hour >= 12 && time.hour < 18
+      "Good afternoon!"
+    else
+      "Good Evening!"
+    end
+  end
 end

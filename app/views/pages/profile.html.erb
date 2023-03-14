@@ -3,7 +3,11 @@
   <%= link_to "home page", root_path, class:"btn btn-primary"%>
 
     <div class="d-flex">
-      <h1> Hello, Mr/Miss <%= current_user.first_name %> </h1>
+      <% if user_signed_in? %>
+         <%= greeting_user %>
+      <% else %>
+        <%= greeting_everyone %>
+      <% end %>
     </div>
 
       <div class="Personal-popup">
