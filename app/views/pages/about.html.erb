@@ -1,0 +1,82 @@
+<div class="bg-light">
+  <div class="container py-5">
+    <div class="row h-100 align-items-center py-5">
+      <div class="col-lg-6">
+        <h1 class="display-4">About Accecity</h1>
+        <p class="lead text-muted mb-0">Making the World Accessible.</p>
+       </div>
+      <div class="col-lg-6 d-none d-lg-block"><%= image_tag "accecity-about2.png", class:"img-fluid"%></div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white py-5">
+  <div class="container py-5">
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6 order-2 order-lg-1"><i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i><i class="fa-solid fa-hand-holding-heart"></i>
+        <h2 class="font-weight-light">We believe in a truly inclusive society</h2>
+        <p class="font-italic text-muted mb-4">Ensuring accessibility for people using wheelchairs in public places is essential for creating a truly inclusive society. It promotes equal access to essential services, opportunities, and experiences, thereby fostering greater social integration and reducing stigma. By eliminating physical barriers and providing accessible pathways, we can create an environment where everyone can participate fully, regardless of their physical abilities. It is therefore crucial to prioritize accessibility in public spaces to promote inclusivity and diversity.</p><a href="#" class="btn btn-primary px-5 rounded-pill shadow-sm">Learn More</a>
+      </div>
+      <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><%= image_tag "accecity-about1.png", class:"img-fluid mb-4 mb-lg-0"%></div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-lg-5 px-5 mx-auto"><%= image_tag "accecity-about3.png", class:"img-fluid mb-4 mb-lg-0"%></div>
+      <div class="col-lg-6"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <h2 class="font-weight-light">Rating places for accessibility </h2>
+        <p class="font-italic text-muted mb-4">Rating places for accessibility is crucial in promoting greater inclusion and participation for people with disabilities. By providing feedback on the accessibility of public places, individuals can create awareness of the barriers they face, and bring attention to the need for change. This feedback can then be used by businesses, governments, and organizations to identify areas for improvement and implement solutions that promote accessibility.
+        Sign up today und be a part of our community!</p><%= link_to "sign up", new_user_registration_path, class: "btn btn-primary px-5 rounded-pill shadow-sm" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-light py-5">
+  <div class="container py-5">
+    <div class="row mb-4">
+      <div class="col-lg-5">
+        <h2 class="display-4 font-weight-light">Our team</h2>
+        <p class="font-italic text-muted">Our Accecity team is working towards a more inclusive and accessible society for all.</p>
+      </div>
+    </div>
+
+    <div class="row text-center">
+
+      <div class="col-xl-3 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://ca.slack-edge.com/T02NE0241-U04HLLL940P-f0c5b8e87dea-512" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">Diego Omegna</h5><span class="small text-uppercase text-muted"> Founder</span>
+          <ul class="social mb-0 list-inline mt-3">
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-github"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+
+
+      <div class="col-xl-3 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://ca.slack-edge.com/T02NE0241-U04HUQNBK2R-639e9db43118-512" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">Namgel Dorjee</h5><span class="small text-uppercase text-muted">Co - Founder</span>
+          <ul class="social mb-0 list-inline mt-3">
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-github"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+
+
+      <div class="col-xl-3 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://ca.slack-edge.com/T02NE0241-U04JX8P33A5-f139545f7610-512" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">Karlo Malecki</h5><span class="small text-uppercase text-muted">Co - Founder</span>
+          <ul class="social mb-0 list-inline mt-3">
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-github"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%= render "shared/footer" %>
