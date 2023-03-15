@@ -1,4 +1,4 @@
-<%= simple_form_for @place do |f| %>
+<%= simple_form_for @place, :action => 'update' do |f| %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit %>
+  <%= f.submit "Upload Photos", class: "btn btn-primary" %>
 <% end %>

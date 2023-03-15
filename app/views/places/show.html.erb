@@ -3,10 +3,6 @@
   <%= render "/shared/card" %>
 
 
-    <% @place.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-
     <h2><strong>About Place</strong></h2>
     <p>  <%= @place.details %> </p>
 
@@ -43,9 +39,14 @@
     <div class = "d-flex justify-content-center m-3">
         <%= link_to "+Add Review", new_place_review_path(@place), class: "btn btn-primary" %>
     </div>
+
     <div class="m-3">
       <h2><strong>Gallery Photo</strong></h2>
-      <%= render "shared/img_upload" %>
+      <%= render "shared/photo_gallery" %>
+        <%= simple_form_for @place, :action => 'update' do |f| %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+          <%= f.submit "Upload Photos", class: "btn btn-primary" %>
+        <% end %>
     </div>
   <div class="justify-content-center m-3">
     <div class="mapbox">
