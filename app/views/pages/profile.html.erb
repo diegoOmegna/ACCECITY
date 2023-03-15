@@ -10,7 +10,13 @@
               <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.9XZpj_0lyp50szt9nNNhbAHaI4%26pid%3DApi&f=1&ipt=1b96ffa3f0283f1efa03dd7d2126103c8051b66b1448941cc35cd83534d4c553&ipo=images"
                 alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
                         <div>
-                          <h3> Hello,  <%= current_user.first_name %> </h3>
+                          <h3> 
+                              <% if user_signed_in? %>
+                                 <%= greeting_user %>
+                              <% else %>
+                                <%= greeting_everyone %>
+                              <% end %>
+                          </h3>
                         </div>
                         </div>
                       <div class="col-md-8">
@@ -37,7 +43,7 @@
                             <div class="d-flex">
                               <p>e-mail:</p> <%= current_user.email %>
                             </div>
-
+                            
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
@@ -56,7 +62,7 @@
                     <%= review.rating %>
                     <% end %>
                   </div>
-
+                  
                 <div class="col-6 mb-3">
                 </div>
 

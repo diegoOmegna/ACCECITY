@@ -1,12 +1,32 @@
 <div class="container">
-  <h1>New review</h1>
-  <%= simple_form_for([@place, @review]) do |f| %>
-    <%= f.input :rating, input_html: { min: '0', max: '3', step: '1' }%>
-    <%= f.input :restroom_rating, input_html: { min: '0', max: '3', step: '1' }%>
-    <%= f.input :parking_rating, input_html: { min: '0', max: '3', step: '1' }%>
-    <%= f.input :other_rating, input_html: { min: '0', max: '3', step: '1' }%>
-    <%= f.input :comment, minlength: 50, maxlength: 600 %>
-    <%= f.button :submit, class: "btn btn-primary" %>
-  <% end %>
-  <%= link_to "Back", place_path(@place) %>
+  <div class="card mb-3 shadow">
+    <%= image_tag "ratingheader.png", class:"card-img-top"%>
+      <div class="card-body">
+      <h5 class="card-title">Add a Review and help us to improve accessibility!</h5>
+      <br>
+      <p>Please rate <i class="fa-solid fa-star"></i> the place based on the guidelines provided.</p>
+      <%= simple_form_for([@place, @review]) do |f| %>
+        <%= f.input :rating,
+        label: 'Entrance rating',
+        placeholder: '1 to 3 stars' ,
+        input_html: { class:"rating-field", min: '0', max: '3', step: '1' } %>
+        <%= f.input :restroom_rating,
+        placeholder: '1 to 3 stars' ,
+        input_html: { class:"rating-field", min: '0', max: '3', step: '1' } %>
+        <%= f.input :parking_rating,
+        placeholder: '1 to 3 stars' ,
+        input_html: { class:"rating-field", min: '0', max: '3', step: '1' } %>
+        <%= f.input :other_rating,
+        label: 'Floor rating',
+        placeholder: '1 to 3 stars' ,
+        input_html: { class:"rating-field", min: '0', max: '3', step: '1' } %>
+        <%= f.input :comment,
+        input_html: { class:"comment"},
+        minlength: 50, maxlength: 600 %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+      <%= link_to "Back", place_path(@place) %>
+    </div>
+  </div>
+   <%= render "shared/footer" %>
 </div>
