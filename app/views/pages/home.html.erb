@@ -2,9 +2,9 @@
   <div class="home-headers">
     <div class="salute-header">
       <% if user_signed_in? %>
-        GoodDay <%= current_user.first_name %>!
+         <%= greeting_user %>
       <% else %>
-        Good Morning!
+        <%= greeting_everyone %>
       <% end %>
     </div>
     <div class="main-header">
@@ -16,7 +16,12 @@
   <div class="container">
     <div class="invitation">
       <h2>Join the community! </h2>
-      <h3>Help us make the city a place for everyone,<%=link_to "sign up", new_user_registration_path %> and be part of the accessibility revolution.</h3>
+      <h3>Help us make the city a place for everyone,
+      <%=link_to "sign up", new_user_registration_path %>
+      and be part of the accessibility revolution.</h3>
+      <h3>Find the all the information about accessibility
+      for different places around your city. </h3>
+      <h3>More about our goal and mission <%= link_to "here", about_path %></h3>
     </div>
   </div>
     <div class="container">
