@@ -1,13 +1,13 @@
 <div class="cards">
   <% @places.each do |place| %>
     <%= link_to place_path(place) do%>
-      <div class="card-small" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+      <div class="card-small p-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
         url('<%=place_header_photo_url(place)%>')">
         <div class="d-flex flex-column">
-          <div class="p-2"><h2> <%= place.name %></h2> </div>
-          <div class="p-2"><p><i class="fa-solid fa-location-dot"></i> <%= place.address %></p></div>
-          <div class="p-2"><p><%= "#{place.reviews.count} people have reviewed"%></p></div>
-            <div class="p-2"><%= place.avg_review.to_i.times do %>
+          <div class=""><h2> <%= place.name %></h2> </div>
+          <div class=""><p class="card-text"><i class="fa-solid fa-location-dot"></i> <%= place.address %></p></div>
+          <div class=""><p class="card-text"><%= "#{place.reviews.count} people have reviewed"%></p></div>
+            <div class=""><%= place.avg_review.to_i.times do %>
             <i class="fa-solid fa-star"></i>
             <% end %>
             </div>
