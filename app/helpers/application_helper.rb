@@ -37,7 +37,7 @@ module ApplicationHelper
     end
   end
 
-  def review_medals(total_reviews)
+def review_medals(total_reviews)
     if total_reviews >= 10 && total_reviews < 20
       "🥉"
     elsif total_reviews >= 20 && total_reviews < 30
@@ -46,6 +46,7 @@ module ApplicationHelper
       "🥇"
     elsif total_reviews >= 40
       "🏵️"
+
     end
   end
 end
