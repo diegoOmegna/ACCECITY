@@ -1,20 +1,23 @@
-<% if !user_signed_in? %>
-  <div class="jumbotron">
-    <h1>Your Favorite Places Reviewed</h1>
-    <p>Please click Sign up button to review a place</p>
-    <p><%= link_to "Sign Up To Write A Review", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+  <div class="container">
+  <% if !user_signed_in? %>
+    <div class="jumbotron p-3 shadow bg-light rounded">
+      <h1>Your Favorite Places Reviewed</h1>
+      <p>Please click Sign up button to review a place</p>
+      <p><%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+    </div>
+  <% end %>
+
+  <div class="container">
+      <%= render "shared/form" %>
+        <h1> Places </h1>
+      <%= render "shared/cardsmall" %>
+      <br>
+
+    <%# <%= cl_image_tag("https://res.cloudinary.com/dtl8ilb2t/image/upload/v1678098172/cld-sample-2.jpg",
+          width: 400, height: 300, crop: :fill) %>
+      <%= link_to "Add New Place", new_place_path, class:"btn btn-primary" %>
+      <%= link_to "Go Back", root_path, class:"btn btn-primary"%>
   </div>
-<% end %>
-
-<div class="container">
-    <%= render "shared/form" %>
-      <h1> Places </h1>
-    <%= render "shared/cardsmall" %>
-
-  <%# <%= cl_image_tag("https://res.cloudinary.com/dtl8ilb2t/image/upload/v1678098172/cld-sample-2.jpg",
-        width: 400, height: 300, crop: :fill) %>
-    <%= link_to "Add new place", new_place_path, class:"btn btn-primary" %>
-    <%= link_to "go back", root_path, class:"btn btn-primary"%>
-</div>
 
 <%= render "shared/footer" %>
+</div>
