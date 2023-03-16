@@ -10,7 +10,12 @@
 
 
     <h2><strong>About Place</strong></h2>
-    <p>  <%= @place.details %> </p>
+
+         <p> <%= @place.details %> </p>
+        <div class = "d-flex justify-content-between">
+        <h2><strong><%= "Reviews (#{@reviews.length})" %></strong></h2>
+        <h3><i class="fa-solid fa-star"></i> <%= @avg_review %></h3>
+        </div>
 
     <div>
       <% counter = 0 %>
