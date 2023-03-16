@@ -1,24 +1,33 @@
 <section class="vh-100" style="background-color: #87cefa;">
- <%= link_to "home page", root_path, class:"btn btn-primary"%>
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-lg-6 mb-4 mb-lg-0">
         <div class="card mb-3" style="border-radius: .5rem;">
           <div class="row g-0">
-            <div class="col-md-4 gradient-custom text-center text-blue"
+            <div class="col-md-4 gradient-custom d-flex"
               style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
               <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.9XZpj_0lyp50szt9nNNhbAHaI4%26pid%3DApi&f=1&ipt=1b96ffa3f0283f1efa03dd7d2126103c8051b66b1448941cc35cd83534d4c553&ipo=images"
                 alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
-                        <div>
-                          <h3> 
-                              <% if user_signed_in? %>
-                                 <%= greeting_user %>
-                              <% else %>
-                                <%= greeting_everyone %>
-                              <% end %>
-                          </h3>
+                    <div class="container mt-5">
+                      <h3>
+                          <% if user_signed_in? %>
+                              <%= greeting_user %>
+                          <% else %>
+                            <%= greeting_everyone %>
+                          <% end %>
+                      </h3>
+
+                        <div class="container">
+                          <p>
+                            <span class="text-muted small"> <%= review_medals(current_user.reviews.count) %> Reviews: <%= current_user.reviews.count %></span>
+                          </p>
+                         <% current_user.reviews do |review| %>
+                           <%= review.rating %>
+                         <% end %>
                         </div>
-                        </div>
+                    </div>
+
+                      </div>
                       <div class="col-md-8">
                       <div class="card-body p-4">
                       <div class="Personal-popup">
@@ -32,37 +41,37 @@
                               <h5 class="modal-title" id="exampleModalLabel">Personal Info</h5>
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                          <div class="modal-body">
 
-                            <div class="d-flex">
+                          <div class="modal-body">
+                            <div class="container d-flex ">
                               <p>First name:</p> <%= current_user.first_name %>
                             </div>
-                            <div class="d-flex">
+                            <div class="container d-flex">
                               <p>Last Name:</p> <%= current_user.last_name %>
                             </div>
-                            <div class="d-flex">
+                            <div class="container d-flex">
                               <p>e-mail:</p> <%= current_user.email %>
                             </div>
-                            
                           </div>
+
                           <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
                           </div>
-                          </div>
-                        </div>
                         </div>
                       </div>
+                    </div>
+                  </div>
                   <hr class="mt-0 mb-4">
                   <div class="row pt-1">
                   <div class="col-6 mb-3">
 
-                  <h3>My reviews <span class="text-muted small"> reviews <%= current_user.reviews.count %></span></h3>
                   <div class="container">
+                  <h3>My reviews <span class="text-muted small"> reviews <%= current_user.reviews.count %></span></h3>
                     <% current_user.reviews do |review| %>
                     <%= review.rating %>
                     <% end %>
                   </div>
-                  
+
                 <div class="col-6 mb-3">
                 </div>
 
@@ -71,12 +80,14 @@
                   <hr class="mt-0 mb-4">
                   <div class="row pt-1">
                   <div class="col-6 mb-3">
+                    <div class="container">
                     <h6>My favorite places</h6>
-                    <p class="text-muted">favorite place!!</p>
+                    <p class="text-muted">favorite place!! </p>
+                    </div>
                   </div>
                   <div class="col-6 mb-3">
-                    <h6>Rating Guidelinness</h6>
-                    <p class="text-muted">Rating Guidelinness</p>
+                    <%# <h6>Rating Guidelinness</h6> %>
+                    <%# <p class="text-muted">Rating Guidelinness</p> %>
                   </div>
                   </div>
                   <div class="btn btn-primary">
