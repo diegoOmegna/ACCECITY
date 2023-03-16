@@ -55,6 +55,7 @@ class PlacesController < ApplicationController
   end
 
   def update
+    @place.photos.attach(params[:place][:photos])
 
     if @place.update(place_params)
       redirect_to place_path(@place)
@@ -74,7 +75,7 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :details, :address, :header_photo, photos:[])
+    params.require(:place).permit(:name, :details, :address, :header_photo, photos: [])
   end
 
   def set_place
